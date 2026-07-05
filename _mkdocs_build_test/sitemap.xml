@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://issuebeam.github.io/docs/GUIDA/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/GUIDA/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/agent/commits/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/agent/commits/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/agent/commits/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/agent/natural-language/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/agent/natural-language/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/agent/natural-language/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/cli/commands/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/cli/commands/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/cli/commands/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/cli/labels/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/cli/labels/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/cli/labels/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/getting-started/adopt/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/getting-started/adopt/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/getting-started/adopt/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/getting-started/overview/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/getting-started/overview/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/getting-started/overview/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/getting-started/repository/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/getting-started/repository/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/getting-started/repository/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/getting-started/token/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/getting-started/token/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/getting-started/token/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/platforms/claude-code/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/claude-code/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/claude-code/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/platforms/copilot/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/copilot/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/copilot/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/platforms/cursor/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/cursor/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/cursor/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/platforms/other-agents/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/other-agents/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/other-agents/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/platforms/overview/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/overview/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/overview/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/reference/faq/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/reference/faq/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/reference/faq/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/reference/origin/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/reference/origin/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/reference/origin/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/reference/security/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/reference/security/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/reference/security/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/reference/troubleshooting/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/reference/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/reference/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/agent/commits/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/agent/commits/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/agent/commits/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/agent/natural-language/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/agent/natural-language/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/agent/natural-language/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/cli/commands/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/cli/commands/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/cli/commands/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/cli/labels/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/cli/labels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/cli/labels/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/getting-started/adopt/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/getting-started/adopt/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/getting-started/adopt/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/getting-started/overview/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/getting-started/overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/getting-started/overview/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/getting-started/repository/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/getting-started/repository/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/getting-started/repository/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/getting-started/token/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/getting-started/token/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/getting-started/token/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/platforms/claude-code/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/claude-code/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/claude-code/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/platforms/copilot/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/copilot/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/copilot/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/platforms/cursor/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/cursor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/cursor/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/platforms/other-agents/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/other-agents/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/other-agents/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/platforms/overview/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/platforms/overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/platforms/overview/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/reference/faq/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/reference/faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/reference/faq/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/reference/origin/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/reference/origin/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/reference/origin/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/reference/security/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/reference/security/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/reference/security/"/>
+    </url>
+    <url>
+        <loc>https://issuebeam.github.io/docs/it/reference/troubleshooting/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://issuebeam.github.io/docs/it/reference/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://issuebeam.github.io/docs/reference/troubleshooting/"/>
+    </url>
+</urlset>

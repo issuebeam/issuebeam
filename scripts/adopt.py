@@ -22,7 +22,10 @@ COPY_PATHS = [
     ".github/ISSUE_TEMPLATE/bug_report.yml",
     ".github/ISSUE_TEMPLATE/feature_request.yml",
     ".github/ISSUE_TEMPLATE/task.yml",
+    ".github/copilot-instructions.md",
     ".cursor/rules/github-issues.mdc",
+    "AGENTS.md",
+    "CLAUDE.md",
 ]
 
 
@@ -93,7 +96,11 @@ def adopt(target: Path, repo: str, *, force: bool = False) -> None:
     print("Fatto. Prossimi passi:")
     print("  1. Configura GITHUB_TOKEN (variabile utente Windows o .secrets/github_token)")
     print("  2. python scripts/github_issue.py labels --apply")
-    print("  3. Apri il progetto in Cursor — la regola .cursor/rules/github-issues.mdc è attiva")
+    print("  3. Apri il progetto nel tuo agente AI (Cursor, Claude Code, Copilot, …)")
+    print("     - Cursor: .cursor/rules/github-issues.mdc")
+    print("     - Claude Code: CLAUDE.md + AGENTS.md")
+    print("     - Copilot: .github/copilot-instructions.md + AGENTS.md")
+    print("     - Altre piattaforme: https://issuebeam.github.io/docs/platforms/overview/")
 
 
 def build_parser() -> argparse.ArgumentParser:

@@ -1,0 +1,122 @@
+# MkDocs — Issuebeam (published to issuebeam.github.io/docs/)
+# Preview:  pip install -r docs/requirements.txt && mkdocs serve
+# Publish:  scripts\publish_docs.bat   (or python scripts/publish_docs.py)
+
+site_name: Issuebeam
+site_description: Wire AI agents to GitHub Issues — Cursor, Claude Code, Copilot, and more
+site_author: Antonio Trento
+site_url: https://issuebeam.github.io/docs/
+repo_url: https://github.com/issuebeam/issuebeam
+repo_name: issuebeam/issuebeam
+edit_uri: edit/main/docs/en/
+
+exclude_docs: |
+  requirements.txt
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: false
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: it
+          name: Italiano
+          build: true
+          nav_translations:
+            Home: Home
+            Getting started: Per iniziare
+            Platforms: Piattaforme
+            CLI reference: Riferimento CLI
+            Agent workflow: Flusso agente
+            Reference: Riferimento
+            Overview: Panoramica
+            GitHub token: Token GitHub
+            Repository slug: Slug repository
+            Adopt into a project: Adotta in un progetto
+            Supported platforms: Piattaforme supportate
+            Cursor: Cursor
+            Claude Code: Claude Code
+            GitHub Copilot: GitHub Copilot
+            Other agents: Altri agenti
+            Commands: Comandi
+            Labels: Label
+            Natural language: Linguaggio naturale
+            Commits and PRs: Commit e PR
+            Security: Sicurezza
+            Troubleshooting: Risoluzione problemi
+            FAQ: FAQ
+            Origin: Origine
+  - search: {}
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - getting-started/overview.md
+      - getting-started/token.md
+      - getting-started/repository.md
+      - getting-started/adopt.md
+  - Platforms:
+      - platforms/overview.md
+      - platforms/cursor.md
+      - platforms/claude-code.md
+      - platforms/copilot.md
+      - platforms/other-agents.md
+  - CLI reference:
+      - cli/commands.md
+      - cli/labels.md
+  - Agent workflow:
+      - agent/natural-language.md
+      - agent/commits.md
+  - Reference:
+      - reference/security.md
+      - reference/troubleshooting.md
+      - reference/faq.md
+      - reference/origin.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/issuebeam/issuebeam

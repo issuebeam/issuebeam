@@ -5,7 +5,7 @@ alwaysApply: true
 
 # GitHub Issues — fonte di verità (issuebeam)
 
-Per **bug**, **evolutive** e **task di sprint**, preferire **GitHub Issues** su [issuebeam/issuebeam](https://github.com/issuebeam/issuebeam) tramite:
+Per **bug**, **evolutive** e **task di sprint**, preferire **GitHub Issues** tramite:
 
 ```cmd
 python scripts/github_issue.py <comando>
@@ -13,15 +13,17 @@ python scripts/github_issue.py <comando>
 
 **L'agente deve eseguire lo script direttamente** (non chiedere all'utente comandi manuali).
 
+> **Piattaforma:** questa regola è per **Cursor**. Per Claude Code, Copilot, Windsurf e altri tool vedi `AGENTS.md`, `CLAUDE.md` e [issuebeam.github.io/docs/platforms/overview/](https://issuebeam.github.io/docs/platforms/overview/).
+
 Repository configurato in `tracker/github_repo`, `.env` (`GITHUB_REPO`) o variabile d'ambiente.
 
 Token letto automaticamente da (in ordine):
 1. `GITHUB_TOKEN` nel processo
-2. **Variabili utente Windows** (registry — funziona anche nel terminale Cursor)
+2. **Variabili utente Windows** (registry — funziona nei terminali IDE)
 3. `.env` nella root del repo
 4. `.secrets/github_token` (gitignored)
 
-Guida: [docs/GUIDA.md](../docs/GUIDA.md) · Sito: [issuebeam.github.io](https://issuebeam.github.io) · Riferimento rapido: [tracker/README.md](../tracker/README.md).
+Guida: [issuebeam.github.io/docs/it](https://issuebeam.github.io/docs/it/) · Piattaforme: [issuebeam.github.io/docs/it/platforms/overview/](https://issuebeam.github.io/docs/it/platforms/overview/) · Sito: [issuebeam.github.io](https://issuebeam.github.io) · CLI: [tracker/README.md](../tracker/README.md).
 
 ## Quando l'utente segnala un problema o chiede lavoro
 
@@ -72,6 +74,6 @@ python scripts/github_issue.py close-batch 1 2 3 --reason "..."
 
 **Regola agente:** eseguire sempre `python scripts/github_issue.py` dal repo — non delegare comandi shell all'utente se il token è configurato.
 
-## Cursor chat (italiano)
+## Chat con l'agente (italiano)
 
 Se l'utente dice *«apri issue per…»*, *«traccia bug…»*, *«crea task GitHub…»* → usa lo script, non nuovi markdown di tracking.

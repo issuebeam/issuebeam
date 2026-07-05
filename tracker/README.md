@@ -4,6 +4,8 @@
 
 I file markdown locali (piani, note, post-mortem) restano **riferimento e archivio**. Lo stato operativo (aperto / in corso / chiuso) vive su GitHub.
 
+> Issuebeam funziona con **qualsiasi agente AI** (Cursor, Claude Code, Copilot, …) o **senza agente** (CLI manuale). Documentazione: [issuebeam.github.io/docs/it](https://issuebeam.github.io/docs/it/).
+
 ---
 
 ## Configurazione repository
@@ -22,12 +24,12 @@ Override una tantum: `python scripts/github_issue.py --repo owner/repo list`
 
 ## Token GitHub
 
-Lo script legge il token **automaticamente** (l'agente Cursor non deve chiedere comandi manuali):
+Lo script legge il token **automaticamente** (l'agente non deve chiedere comandi manuali):
 
 | Priorità | Sorgente |
 |----------|----------|
 | 1 | Variabile `GITHUB_TOKEN` nella sessione corrente |
-| 2 | **Variabili utente Windows** (funziona anche nel terminale Cursor) |
+| 2 | **Variabili utente Windows** (funziona nei terminali IDE) |
 | 3 | File `.env` nella root: `GITHUB_TOKEN=github_pat_...` |
 | 4 | File `.secrets/github_token` — una riga, gitignored |
 
@@ -45,7 +47,7 @@ Incolla il token su una riga, salva. **Mai** committare quel file.
 
 ---
 
-## Uso con Cursor chat
+## Uso con agenti AI
 
 Quando segnali un bug o chiedi un task, l'agente può creare o aggiornare issue GitHub:
 
@@ -53,9 +55,16 @@ Quando segnali un bug o chiedi un task, l'agente può creare o aggiornare issue 
 - *«Crea task GitHub per dark mode»*
 - *«Commenta issue #42 con il fix applicato»*
 
-L'agente esegue `python scripts/github_issue.py ...` (vedi regola `.cursor/rules/github-issues.mdc`).
+L'agente esegue `python scripts/github_issue.py ...` secondo le istruzioni nel repo:
 
-Guida completa: [docs/GUIDA.md](../docs/GUIDA.md) · Sito: [issuebeam.github.io](https://issuebeam.github.io)
+| Piattaforma | File |
+|-------------|------|
+| Cursor | `.cursor/rules/github-issues.mdc` |
+| Claude Code | `CLAUDE.md`, `AGENTS.md` |
+| GitHub Copilot | `.github/copilot-instructions.md`, `AGENTS.md` |
+| Altro | `AGENTS.md` — vedi [docs piattaforme](https://issuebeam.github.io/docs/it/platforms/overview/) |
+
+Guida completa: [issuebeam.github.io/docs/it](https://issuebeam.github.io/docs/it/) · Sito: [issuebeam.github.io](https://issuebeam.github.io)
 
 ---
 
