@@ -105,8 +105,6 @@ def should_suppress() -> bool:
         return True
     if os.environ.get("CI", "").strip().lower() in {"1", "true", "yes"}:
         return True
-    if not sys.stdout.isatty():
-        return True
     return False
 
 
@@ -229,7 +227,7 @@ def cmd_feedback(args: argparse.Namespace) -> int:
         )
         return 1
 
-    if args.locale:
+    if getattr(args, "locale", None):
         payload["locale"] = args.locale
 
     if not post_intake(payload):
