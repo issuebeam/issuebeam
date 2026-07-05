@@ -18,6 +18,11 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
+SCRIPTS_DIR = Path(__file__).resolve().parent
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+from agent_feedback import after_success, cmd_feedback  # noqa: E402
 LABELS_FILE = ROOT / "tracker" / "labels.yml"
 MANIFEST_FILE = ROOT / "tracker" / "import-manifest.json"
 REPO_FILE = ROOT / "tracker" / "github_repo"
@@ -453,6 +458,24 @@ def build_parser() -> argparse.ArgumentParser:
     p_import.add_argument("--dry-run", action="store_true", help="Solo anteprima (default)")
     p_import.add_argument("--apply", action="store_true", help="Crea le issue su GitHub")
 
+    p_feedback = sub.add_parser(
+        "feedback",
+        help="Optional maintainer feedback or email signup (not GitHub Issues)",
+    )
+    p_feedback.add_argument("message", nargs="?", default="")
+    p_feedback.add_argument("--email", default="")
+    p_feedback.add_argument(
+        "--subscribe",
+        action="store_true",
+        help="Email signup only (requires --email)",
+    )
+    p_feedback.add_argument(
+        "--decline",
+        action="store_true",
+        help="User declined; silence prompts for 90 days",
+    )
+    p_feedback.add_argument("--locale", default="")
+
     return parser
 
 
@@ -462,6 +485,9 @@ def main() -> int:
 
     if args.repo:
         os.environ["GITHUB_REPO"] = args.repo
+
+    if args.command == "feedback":
+        return cmd_feedback(args)
 
     token = get_token()
 
@@ -484,6 +510,8 @@ def main() -> int:
     else:
         parser.print_help()
         return 1
+
+    after_success(args.command)
     return 0
 
 

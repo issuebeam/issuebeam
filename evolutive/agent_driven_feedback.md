@@ -1,5 +1,8 @@
 # Agent-Driven Feedback — specifica v2.1
 
+> **Stato implementazione CLI:** ✅ `scripts/agent_feedback.py` + subcommand `feedback` in `github_issue.py` (2026-07-05).
+> **Server intake:** 🚧 `issuebeam-intake/` (repo locale) — porta **8081**, tunnel **issuebeam.antoniotrento.net**.
+
 > **Framework:** [Runsegue](https://github.com/Runsegue/Runsegue) (`pip install runsegue` o vendor). Issuebeam = primo adopter. Server intake = altro repo (`POST /v1/intake`).
 
 Feedback opzionale e iscrizione email per chi usa issuebeam da tempo, **senza** inquinare `AGENTS.md` e **senza** travestire l’output da system prompt.
@@ -390,3 +393,59 @@ curl -s -X POST "$ISSUEBEAM_INTAKE_API_BASE/v1/intake" \
 | Solo `COMPLETED` | `completed` + `declined` + cooldown | — |
 | Contatore su ogni comando | Solo comandi backlog | — |
 | `.usage_count` testuale | `.feedback_state.json` | — |
+
+---
+
+## 12. Sicurezza anti-spam (CLI open source)
+
+### Il vincolo reale
+
+Issuebeam è **open source e distribuito**. Qualsiasi token nel repo/binario è **estraibile** → **non è un segreto**. Un `X-App-Token` hardcoded pubblico NON è autenticazione: chiunque lo copia e può spammare `/v1/intake`, sporcando il DB.
+
+**Conclusione:** non esiste un segreto client affidabile. La pulizia del DB si ottiene lato **server**, non con un token client.
+
+### Modello scelto: doppio opt-in email + quarantena
+
+| kind | Cosa persiste subito | Cosa conta come "vero" |
+|------|----------------------|------------------------|
+| `subscribe` | record `status=pending` + token verifica | Solo dopo click su link email → `status=verified` |
+| `feedback_and_subscribe` | record `pending` (feedback legato all'email) | Confermato con l'email |
+| `feedback` (anonimo, no email) | `status=pending` in quarantena | Non conta finché non lo approvi tu (o scartato) |
+
+**Effetti:**
+
+- Email fasulle → non ricevono mai il click → restano `pending` → **non sporcano** la lista verificata.
+- Feedback anonimi di massa → tutti in quarantena → il tuo export "vero" filtra `status=verified`.
+- Niente illusione di token segreto: il gate è la **casella email dell'utente**, che l'attaccante non controlla.
+
+### Token: a cosa servono DAVVERO
+
+| Token | Scopo REALE | Dove | Committare? |
+|-------|-------------|------|-------------|
+| **App** (`INTAKE_APP_TOKEN` / `ISSUEBEAM_APP_TOKEN`) | Solo **anti-abuso base** + poter revocare/ruotare senza cambiare URL. NON è sicurezza. | Server `.env` + costante CLI | Accettabile nel repo, ma **non** è ciò che protegge il DB |
+| **Admin** (`INTAKE_ADMIN_TOKEN`) | Export/stats — **vero segreto** | Solo server `.env` | **MAI** nel repo |
+
+Il DB resta pulito grazie a **doppio opt-in + quarantena**, non grazie all'app token.
+
+### Server: responsabilità aggiuntive
+
+1. `subscribe`/`feedback_and_subscribe` → `status=pending` + `verify_token` univoco
+2. Endpoint `GET /verify?token=…` → passa a `verified`
+3. (SMTP) invio email di conferma con link — oppure, fase 1, solo generazione token e verifica manuale
+4. `GET /v1/export.csv?status=verified` (default) — export pulito
+5. Rate limit per IP (rumore, non sicurezza)
+
+### Setup token (comandi)
+
+```bash
+python -c "import secrets; print('APP  =', secrets.token_urlsafe(32)); print('ADMIN=', secrets.token_urlsafe(32))"
+```
+
+- `APP` → `issuebeam-intake/.env` (`INTAKE_APP_TOKEN`) **e** `issuebeam/scripts/agent_feedback.py` (`_OFFICIAL_INTAKE_APP_TOKEN`)
+- `ADMIN` → **solo** `issuebeam-intake/.env` (`INTAKE_ADMIN_TOKEN`)
+
+### Open point ancora aperti
+
+- [x] SMTP Yahoo (`smtp.mail.yahoo.com:587` + STARTTLS) — credenziali in `.env` (da `cloudetta/.env`)
+- [ ] Feedback anonimo: approvazione manuale o scarto automatico?
+- [ ] Retention record `pending` (es. purge dopo 30 giorni non verificati)

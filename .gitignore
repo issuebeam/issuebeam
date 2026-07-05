@@ -22,6 +22,7 @@ Thumbs.db
 
 # Local repo config (created by adopt.py or manually)
 tracker/github_repo
+tracker/.feedback_state.json
 
 # Import manifest with real project data (copy from example)
 tracker/import-manifest.json
