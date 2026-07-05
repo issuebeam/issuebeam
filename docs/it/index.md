@@ -1,5 +1,7 @@
 # Issuebeam
 
+**[← Sito web (issuebeam.github.io)](https://issuebeam.github.io/it/)** · Documentazione
+
 **Issuebeam** collega **agenti AI di coding** a **GitHub Issues** con una CLI Python stdlib e file di istruzioni nel repository. Funziona su **Windows, macOS e Linux** con Cursor, Claude Code, Copilot e altro.
 
 !!! info "Documentazione bilingue"

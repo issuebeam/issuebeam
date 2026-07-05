@@ -120,5 +120,7 @@ nav:
 
 extra:
   social:
+    - icon: fontawesome/solid/house
+      link: https://issuebeam.github.io/
     - icon: fontawesome/brands/github
       link: https://github.com/issuebeam/issuebeam
