@@ -1,12 +1,12 @@
 # Agent instructions — GitHub Issues (issuebeam)
 
-Use this file with **any AI coding agent** that can read repository instructions and run shell commands (Cursor, Claude Code, GitHub Copilot, Windsurf, Cline, Gemini CLI, Codex CLI, Continue, Aider, custom bots).
+Use this file with **any AI coding agent** on **Windows, macOS, or Linux** that can read repository instructions and run shell commands (Cursor, Claude Code, GitHub Copilot, Windsurf, Cline, Gemini CLI, Codex CLI, Continue, Aider, custom bots).
 
 ## Source of truth
 
 For **bugs**, **enhancements**, and **sprint tasks**, prefer **GitHub Issues** via:
 
-```cmd
+```bash
 python scripts/github_issue.py <command>
 ```
 
@@ -15,8 +15,8 @@ python scripts/github_issue.py <command>
 Repository slug: `tracker/github_repo`, `.env` (`GITHUB_REPO`), or environment variable.
 
 Token resolution order:
-1. `GITHUB_TOKEN` in the process environment
-2. **Windows user environment variables** (registry — works in IDE terminals)
+1. `GITHUB_TOKEN` in the process environment (all OS)
+2. **Windows only:** user environment variables (registry — helps IDE terminals)
 3. `.env` at repo root
 4. `.secrets/github_token` (gitignored)
 
@@ -58,7 +58,7 @@ For imported issues, include **`Legacy ID:`** in the body (e.g. `BUG-001`) and a
 
 ## Useful commands
 
-```cmd
+```bash
 python scripts/github_issue.py labels --apply
 python scripts/github_issue.py import --dry-run
 python scripts/github_issue.py import --apply

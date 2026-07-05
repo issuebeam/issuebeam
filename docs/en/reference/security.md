@@ -13,22 +13,22 @@
 - **Never** commit tokens or share screenshots with tokens visible
 - **Never** use PowerShell scripts in this stack (antivirus / team policy) — Python only
 
-## SSL on Windows
+## SSL / corporate proxy
 
-If you see SSL certificate errors toward `api.github.com`:
+If you see SSL certificate errors toward `api.github.com` (common on **Windows** with corporate AV/proxy, sometimes elsewhere):
 
-```cmd
+```bash
 pip install -r requirements-optional.txt
 ```
 
-Installs `truststore` which uses the Windows trust store.
+Installs optional `truststore` (uses the OS trust store on Windows).
 
-## Token resolution order
+## Token resolution order (CLI)
 
 The CLI reads the token automatically:
 
-1. `GITHUB_TOKEN` in process environment
-2. Windows user environment variables (registry)
+1. `GITHUB_TOKEN` in process environment (all OS)
+2. **Windows only:** user env var from registry (helps IDE terminals)
 3. `.env` at repo root
 4. `.secrets/github_token`
 

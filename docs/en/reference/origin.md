@@ -10,8 +10,8 @@ Issuebeam is a **generalized extract** of the tracking system used in the [Qwibo
 
 ## Kept
 
-- Stdlib CLI without `gh` dependency
-- Token read from Windows registry (ideal for IDE agents)
+- Stdlib CLI without `gh` dependency — **Windows, macOS, Linux**
+- Token from env, `.env`, `.secrets/`, and on Windows optional registry read for IDE agents
 - Multi-platform instructions (`AGENTS.md` + Cursor/Copilot/Claude rules)
 - Import manifest with Legacy ID anti-duplicates
 - Agent rule: *run the script, don't delegate to the user*

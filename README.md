@@ -2,7 +2,7 @@
 
 **GitHub Issues from AI agent chat — for vibe coders.**
 
-Works with **Cursor, Claude Code, GitHub Copilot, Windsurf, Cline, Gemini CLI, Codex CLI**, and any agent that can read repo instructions and run shell commands.
+Works on **Windows, macOS, and Linux** with **Cursor, Claude Code, GitHub Copilot, Windsurf, Cline, Gemini CLI, Codex CLI**, and any agent that can read repo instructions and run shell commands.
 
 ---
 
@@ -10,7 +10,8 @@ Works with **Cursor, Claude Code, GitHub Copilot, Windsurf, Cline, Gemini CLI, C
 
 Stai sviluppando con **vibe coding** (LLM, iterazione rapida) e perdi il filo di bug, task e idee sparse in chat? **issuebeam** collega **qualsiasi agente AI** all'**issue tracker ufficiale su GitHub**: l'agente crea e aggiorna issue con un comando Python, senza `gh` CLI e senza script PowerShell.
 
-- CLI stdlib (`urllib`) + token da env / Windows / `.env` / `.secrets/`
+- CLI stdlib (`urllib`) — **Windows, macOS, Linux**
+- Token da env, `.env`, `.secrets/` (su Windows anche lettura opzionale da registry)
 - **Regole agente multi-piattaforma** — Cursor, Claude Code, Copilot, e altro via `AGENTS.md`
 - Template issue GitHub generici (bug, evolutiva, task)
 - `adopt.py` per copiare tutto in un progetto esistente in un colpo solo
@@ -23,7 +24,8 @@ Stai sviluppando con **vibe coding** (LLM, iterazione rapida) e perdi il filo di
 
 You ship with **vibe coding** (LLMs, fast iteration) and lose track of bugs and tasks buried in chat? **issuebeam** wires **any AI agent** to **GitHub Issues**: the agent creates and updates issues via a Python CLI — no `gh` CLI, no PowerShell scripts.
 
-- Stdlib CLI + token from env / Windows user vars / `.env` / `.secrets/`
+- Stdlib CLI — **Windows, macOS, Linux**
+- Token from env, `.env`, `.secrets/` (on Windows, optional registry read for IDE terminals)
 - **Multi-platform agent rules** — Cursor, Claude Code, Copilot, and more via `AGENTS.md`
 - Generic GitHub issue templates
 - `adopt.py` to copy the skeleton into any repo
@@ -34,15 +36,16 @@ You ship with **vibe coding** (LLMs, fast iteration) and lose track of bugs and 
 
 ## Quick start
 
-### 1. Token GitHub
+### 1. GitHub token
 
-Create a Personal Access Token with **Issues: read & write** on your repo.  
-Store it as Windows user env var `GITHUB_TOKEN`, or in `.secrets/github_token` (one line, gitignored).
+Create a Personal Access Token with **Issues: read & write** on your repo.
+
+Set `GITHUB_TOKEN` in your environment (see [token guide](https://issuebeam.github.io/docs/getting-started/token/) for Windows, macOS, and Linux), or use `.secrets/github_token` (one line, gitignored).
 
 ### 2. Repository slug
 
-```cmd
-echo myorg/my-app> tracker\github_repo
+```bash
+python -c "from pathlib import Path; Path('tracker/github_repo').write_text('myorg/my-app\n')"
 ```
 
 Or in `.env`:
@@ -54,7 +57,7 @@ GITHUB_TOKEN=github_pat_...
 
 ### 3. Labels + first issue
 
-```cmd
+```bash
 python scripts/github_issue.py labels --apply
 python scripts/github_issue.py create "Test issue from vibe tracker" --labels task
 python scripts/github_issue.py list
@@ -62,8 +65,8 @@ python scripts/github_issue.py list
 
 ### 4. Adopt into another project
 
-```cmd
-python scripts/adopt.py --target ..\my-repo --repo myorg/my-app
+```bash
+python scripts/adopt.py --target ../my-repo --repo myorg/my-app
 ```
 
 ### 5. Wire your AI agent
@@ -75,20 +78,22 @@ python scripts/adopt.py --target ..\my-repo --repo myorg/my-app
 | GitHub Copilot | `.github/copilot-instructions.md` + `AGENTS.md` |
 | Other | See [docs](https://issuebeam.github.io/docs/platforms/overview/) |
 
-### 6. Optional: Windows SSL (corporate proxy / antivirus)
+### 6. Optional: SSL / corporate proxy
 
-```cmd
+If you see certificate errors toward `api.github.com` (common on Windows with corporate AV):
+
+```bash
 pip install -r requirements-optional.txt
 ```
 
 ### 7. Documentation (MkDocs IT/EN)
 
-```cmd
+```bash
 pip install -r docs/requirements.txt
 mkdocs serve
 ```
 
-Publish to [issuebeam.github.io/docs](https://issuebeam.github.io/docs/): `scripts\publish_docs.bat`
+Publish to [issuebeam.github.io/docs](https://issuebeam.github.io/docs/): `python scripts/publish_docs.py`
 
 ---
 

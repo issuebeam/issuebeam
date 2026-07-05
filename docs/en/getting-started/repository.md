@@ -12,8 +12,10 @@ Resolution order:
 
 ## Option A — local file (recommended after adopt)
 
-```cmd
-echo myorg/my-app> tracker\github_repo
+Cross-platform (Python 3):
+
+```bash
+python -c "from pathlib import Path; Path('tracker/github_repo').write_text('myorg/my-app\n')"
 ```
 
 ## Option B — `.env`
@@ -25,7 +27,7 @@ GITHUB_TOKEN=github_pat_...
 
 ## Option C — one-time override
 
-```cmd
+```bash
 python scripts/github_issue.py --repo myorg/my-app list
 ```
 
@@ -33,7 +35,9 @@ python scripts/github_issue.py --repo myorg/my-app list
 
 After token and slug are set:
 
-```cmd
+```bash
 python scripts/github_issue.py labels --apply
 python scripts/github_issue.py list
 ```
+
+Works the same on **Windows, macOS, and Linux**.

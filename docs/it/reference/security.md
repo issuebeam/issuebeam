@@ -13,22 +13,22 @@
 - **Mai** committare token o condividere screenshot con token visibile
 - **Mai** usare script PowerShell in questo stack (antivirus / policy team) — solo Python
 
-## SSL su Windows
+## SSL / proxy aziendale
 
-Se vedi errori certificato SSL verso `api.github.com`:
+Se vedi errori certificato SSL verso `api.github.com` (comune su **Windows** con AV/proxy aziendale, a volte anche altrove):
 
-```cmd
+```bash
 pip install -r requirements-optional.txt
 ```
 
-Installa `truststore` che usa il trust store di Windows.
+Installa `truststore` opzionale (usa il trust store del SO su Windows).
 
 ## Ordine risoluzione token
 
 La CLI legge il token automaticamente:
 
-1. `GITHUB_TOKEN` nell'ambiente del processo
-2. Variabili utente Windows (registry)
+1. `GITHUB_TOKEN` nell'ambiente del processo (tutti i SO)
+2. **Solo Windows:** variabile utente da registry (aiuta i terminali IDE)
 3. `.env` nella root del repo
 4. `.secrets/github_token`
 

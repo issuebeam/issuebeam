@@ -1,44 +1,44 @@
 # Commands
 
-Run all commands from the **project root** (where `scripts/` lives).
+Run all commands from the **project root** (where `scripts/` lives). Same CLI on **Windows, macOS, and Linux**.
 
 ## Labels
 
 Defined in `tracker/labels.yml`. First time on a repo:
 
-```cmd
+```bash
 python scripts/github_issue.py labels
 python scripts/github_issue.py labels --apply
 ```
 
 ## List issues
 
-```cmd
+```bash
 python scripts/github_issue.py list
 python scripts/github_issue.py list --state closed --limit 50
 ```
 
 ## Create issue
 
-```cmd
+```bash
 python scripts/github_issue.py create "Short title" --body "Markdown **description**" --labels bug,priority-high,area-frontend
 ```
 
 From file:
 
-```cmd
+```bash
 python scripts/github_issue.py create "Safari bug" --body-file description.md --labels bug
 ```
 
 ## Comment
 
-```cmd
+```bash
 python scripts/github_issue.py comment 42 --body "Fix applied in commit abc123"
 ```
 
 ## Close
 
-```cmd
+```bash
 python scripts/github_issue.py close 42
 python scripts/github_issue.py close 42 --reason "Duplicate of #40"
 python scripts/github_issue.py close-batch 10 11 12 --reason "Deprioritized backlog"
@@ -46,9 +46,9 @@ python scripts/github_issue.py close-batch 10 11 12 --reason "Deprioritized back
 
 ## Import batch (migrate from local tracker)
 
-```cmd
-copy tracker\import-manifest.example.json tracker\import-manifest.json
-REM edit import-manifest.json
+```bash
+cp tracker/import-manifest.example.json tracker/import-manifest.json
+# edit import-manifest.json
 python scripts/github_issue.py import --dry-run
 python scripts/github_issue.py import --apply
 ```
@@ -61,6 +61,6 @@ Include **`Legacy ID:`** in each imported body to prevent duplicates on re-impor
 
 ## Override repo slug
 
-```cmd
+```bash
 python scripts/github_issue.py --repo myorg/my-app list
 ```

@@ -1,15 +1,15 @@
 # Other agents
 
-Copy **`AGENTS.md`** into the format your tool expects.
+Copy **`AGENTS.md`** into the format your tool expects. The CLI is identical on **Windows, macOS, and Linux**.
 
 ## Platform reference
 
 | Platform | Instruction file | Setup |
 |----------|------------------|-------|
-| **Windsurf** | `.windsurfrules` | `copy AGENTS.md .windsurfrules` |
+| **Windsurf** | `.windsurfrules` | `cp AGENTS.md .windsurfrules` |
 | **Cline** | `.clinerules` or custom instructions | Paste `AGENTS.md` in Cline settings |
 | **Continue.dev** | `.continue/rules` or YAML config | Reference `AGENTS.md` in config |
-| **Gemini CLI** | `GEMINI.md` | `copy AGENTS.md GEMINI.md` |
+| **Gemini CLI** | `GEMINI.md` | `cp AGENTS.md GEMINI.md` |
 | **OpenAI Codex CLI** | `AGENTS.md` | Included by adopt — run from repo root |
 | **Aider** | `CONVENTIONS.md` or `/read AGENTS.md` | Load at session start |
 | **Custom / CI** | `AGENTS.md` in system prompt | Grant scoped shell tool |
@@ -18,7 +18,7 @@ Copy **`AGENTS.md`** into the format your tool expects.
 
 No agent required:
 
-```cmd
+```bash
 python scripts/github_issue.py create "Bug: login redirect" --labels bug
 python scripts/github_issue.py list
 ```
@@ -29,7 +29,7 @@ Many teams adopt issuebeam for **CLI + labels + templates** first, then add agen
 
 Any automation that runs Python can use issuebeam without an LLM:
 
-```cmd
+```bash
 python scripts/github_issue.py create "CI: flaky test on main" --labels bug,area-infra
 ```
 

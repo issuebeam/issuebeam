@@ -7,7 +7,7 @@ alwaysApply: true
 
 Per **bug**, **evolutive** e **task di sprint**, preferire **GitHub Issues** tramite:
 
-```cmd
+```bash
 python scripts/github_issue.py <comando>
 ```
 
@@ -18,8 +18,8 @@ python scripts/github_issue.py <comando>
 Repository configurato in `tracker/github_repo`, `.env` (`GITHUB_REPO`) o variabile d'ambiente.
 
 Token letto automaticamente da (in ordine):
-1. `GITHUB_TOKEN` nel processo
-2. **Variabili utente Windows** (registry — funziona nei terminali IDE)
+1. `GITHUB_TOKEN` nel processo (tutti i SO)
+2. **Solo Windows:** variabili utente da registry (aiuta i terminali IDE)
 3. `.env` nella root del repo
 4. `.secrets/github_token` (gitignored)
 
@@ -61,7 +61,7 @@ Nel body delle issue importate, includere **`Legacy ID:`** (es. `BUG-001`, `TASK
 
 ## Comandi utili
 
-```cmd
+```bash
 python scripts/github_issue.py labels --apply
 python scripts/github_issue.py import --dry-run
 python scripts/github_issue.py import --apply

@@ -22,7 +22,7 @@ Sì: `python scripts/adopt.py --target ../my-repo --repo myorg/my-app`
 
 ## Dove metto il token?
 
-Preferisci la variabile utente Windows `GITHUB_TOKEN`. Alternative: `.env` (gitignored) o `.secrets/github_token`. Mai committare token o incollarli in chat.
+Preferisci `GITHUB_TOKEN` come variabile d'ambiente (Windows, macOS, Linux). Alternative: `.env` (gitignored) o `.secrets/github_token`. Su Windows la CLI può leggere anche le variabili utente dal registry se il terminale IDE non le eredita.
 
 ## Posso usarlo senza agente AI?
 
@@ -30,10 +30,10 @@ Sì. La CLI funziona anche per umani — molti team partono da CLI + label, poi 
 
 ## Come pubblico questa documentazione?
 
-```cmd
+```bash
 pip install -r docs/requirements.txt
-scripts\publish_docs.bat
-cd ..\issuebeam.github.io
+python scripts/publish_docs.py
+cd ../issuebeam.github.io
 git push
 ```
 

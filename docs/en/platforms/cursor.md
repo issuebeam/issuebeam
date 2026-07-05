@@ -18,8 +18,8 @@ In chat: *"List open GitHub issues"* → agent should run `python scripts/github
 
 ## Notes
 
-- Works in Agent mode and integrated terminal.
-- `GITHUB_TOKEN` from Windows user env is read via registry.
+- Works in Agent mode and integrated terminal on all OS.
+- On **Windows**, `GITHUB_TOKEN` from user env can also be read via registry if the IDE shell does not inherit it.
 - Italian phrases like *«apri issue per…»* are documented in the rule file.
 - This rule is Cursor-specific; other platforms use `AGENTS.md` — see [overview](overview.md).
 

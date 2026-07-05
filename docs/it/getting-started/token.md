@@ -2,6 +2,8 @@
 
 Serve un **Personal Access Token** con permesso di leggere e scrivere le issue del repository target.
 
+Issuebeam funziona su **Windows, macOS e Linux** — cambia solo il modo in cui esporti `GITHUB_TOKEN`. La CLI è identica ovunque: `python scripts/github_issue.py`.
+
 ## Classic token
 
 1. GitHub → **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**
@@ -18,38 +20,99 @@ Serve un **Personal Access Token** con permesso di leggere e scrivere le issue d
 
 ## Dove mettere il token
 
-| Metodo | Pro | Contro |
-|--------|-----|--------|
-| **Variabile utente Windows `GITHUB_TOKEN`** | Funziona in IDE, terminale, agent | Va impostata una volta per macchina |
-| **File `.secrets/github_token`** | Gitignored, facile | File locale — mai committare |
-| **File `.env`** | Comodo in dev | Rischio commit accidentale (gitignored) |
+| Metodo | Funziona su | Pro | Contro |
+|--------|-------------|-----|--------|
+| **Variabile `GITHUB_TOKEN`** | Win · Mac · Linux | Terminale e agenti AI | Riavvia IDE/shell dopo la modifica |
+| **`.secrets/github_token`** | Tutti | Gitignored, semplice, portabile | File locale — mai committare |
+| **`.env`** | Tutti | Comodo in dev | Rischio commit accidentale (gitignored) |
 
 **Mai** incollare il token in chat con l'agente, issue pubbliche o commit.
 
-## Variabile utente Windows (consigliata)
+## Imposta `GITHUB_TOKEN` (consigliato)
 
-1. Apri **Variabili d'ambiente** (sezione utente)
-2. **Nuova…** → Nome: `GITHUB_TOKEN` — Valore: `github_pat_...`
+=== "Windows"
+
+1. Apri **Variabili d'ambiente** → **Variabili utente** → **Nuova…**
+2. Nome: `GITHUB_TOKEN` — Valore: `github_pat_...`
 3. OK su tutte le finestre
-4. **Riavvia l'IDE** (Cursor, VS Code, …) o il terminale integrato
+4. **Riavvia l'IDE** (Cursor, VS Code, …) o apri un nuovo terminale
 
-### Verifica
+**Extra:** se il terminale dell'IDE non vede ancora la variabile, issuebeam legge anche il **registry utente Windows** (stesso valore) — nessun setup aggiuntivo.
 
-```cmd
-python -c "import os; t=os.environ.get('GITHUB_TOKEN',''); print('OK' if t else 'MANCANTE', len(t))"
+=== "macOS"
+
+**Terminale / agenti CLI** — aggiungi a `~/.zshrc` o `~/.bashrc`:
+
+```bash
+export GITHUB_TOKEN=github_pat_...
 ```
 
-Se `MANCANTE` ma hai impostato la variabile utente, lo script legge anche il **registry Windows** — prova:
+Poi `source ~/.zshrc` (o nuovo terminale).
 
-```cmd
+**App GUI (Cursor, VS Code dal Dock)** — le variabili della shell non sempre arrivano alle app avviate dal launcher. Opzioni:
+
+- Avvia l'IDE dal terminale: `cursor .` o `code .`
+- Oppure usa `.env` / `.secrets/github_token` nel progetto (sotto)
+
+=== "Linux"
+
+**Shell** — aggiungi a `~/.bashrc`, `~/.zshrc`, o usa [direnv](https://direnv.net/) nel repo:
+
+```bash
+export GITHUB_TOKEN=github_pat_...
+```
+
+**Sessione utente systemd** (opzionale, per tool GUI):
+
+```ini
+# ~/.config/environment.d/github.conf
+GITHUB_TOKEN=github_pat_...
+```
+
+Logout e login. In alternativa `.env` o `.secrets/github_token`.
+
+## Alternativa: `.env` o `.secrets/` (tutti i SO)
+
+**`.env`** nella root del repo (gitignored):
+
+```
+GITHUB_REPO=myorg/my-app
+GITHUB_TOKEN=github_pat_...
+```
+
+**`.secrets/github_token`** — una riga, gitignored:
+
+```bash
+mkdir -p .secrets
+printf '%s\n' 'github_pat_...' > .secrets/github_token
+chmod 600 .secrets/github_token   # macOS / Linux
+```
+
+## Verifica
+
+```bash
+python -c "import os; print('OK' if os.environ.get('GITHUB_TOKEN') else 'MANCANTE')"
+```
+
+Poi (dopo lo [slug repository](repository.md)):
+
+```bash
 python scripts/github_issue.py list
 ```
 
-(dopo aver configurato lo slug)
+## Ordine di lettura token (CLI)
 
-### Opzionale: `GITHUB_REPO` in variabili utente
+Lo script legge il token automaticamente:
 
-Utile se lavori sempre sullo stesso repo:
+1. `GITHUB_TOKEN` nell'ambiente del processo corrente
+2. **Solo Windows:** variabile utente da registry (aiuta i terminali IDE)
+3. `.env` nella root del repo
+4. `.secrets/github_token`
 
-- Nome: `GITHUB_REPO`
-- Valore: `myorg/my-app`
+## Opzionale: `GITHUB_REPO` nell'ambiente
+
+Stessi metodi di `GITHUB_TOKEN` — utile se lavori sempre sullo stesso repo:
+
+```bash
+export GITHUB_REPO=myorg/my-app
+```

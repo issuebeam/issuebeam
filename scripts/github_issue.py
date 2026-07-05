@@ -129,7 +129,7 @@ def get_token() -> str:
         print("ERRORE: token GitHub non trovato.", file=sys.stderr)
         print("", file=sys.stderr)
         print("Una sola configurazione (in ordine di lettura):", file=sys.stderr)
-        print("  1. Variabile GITHUB_TOKEN (sessione o Windows → Variabili utente)", file=sys.stderr)
+        print("  1. Variabile GITHUB_TOKEN (env di sessione o utente — tutti i SO; su Windows anche registry)", file=sys.stderr)
         print(f"  2. {ENV_FILE.relative_to(ROOT)}  →  GITHUB_TOKEN=...", file=sys.stderr)
         print(f"  3. {TOKEN_FILE.relative_to(ROOT)}  →  token su una riga", file=sys.stderr)
         print("", file=sys.stderr)

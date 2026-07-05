@@ -21,6 +21,6 @@ Per issue importate, includi **`Legacy ID:`** nel body (es. `BUG-001`) e link al
 
 Applica su GitHub:
 
-```cmd
+```bash
 python scripts/github_issue.py labels --apply
 ```

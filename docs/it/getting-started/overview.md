@@ -28,7 +28,7 @@ Tu in chat  →  Agente AI (legge AGENTS.md)  →  github_issue.py  →  GitHub 
 
 Requisiti per ogni piattaforma:
 
-- Python 3
+- Python 3 (**Windows, macOS, Linux**)
 - `GITHUB_TOKEN` con Issues read/write
 - Slug in `tracker/github_repo` o `GITHUB_REPO`
 - Istruzioni agente: *esegui lo script, non delegare all'utente*

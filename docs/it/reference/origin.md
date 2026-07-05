@@ -10,8 +10,8 @@ Issuebeam è un **estratto generalizzato** del sistema di tracking usato nel pro
 
 ## Mantenuto
 
-- CLI stdlib senza dipendenza da `gh`
-- Lettura token da registry Windows (ideale per agenti in IDE)
+- CLI stdlib senza dipendenza da `gh` — **Windows, macOS, Linux**
+- Token da env, `.env`, `.secrets/`, e su Windows lettura opzionale da registry per agenti IDE
 - Istruzioni multi-piattaforma (`AGENTS.md` + regole Cursor/Copilot/Claude)
 - Import manifest con Legacy ID anti-duplicati
 - Regola agente: *esegui lo script, non delegare all'utente*

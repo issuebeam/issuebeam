@@ -2,11 +2,11 @@
 
 From the **issuebeam** folder (or after cloning this repo):
 
-```cmd
-python scripts/adopt.py --target ..\my-repo --repo myorg/my-app
+```bash
+python scripts/adopt.py --target ../my-repo --repo myorg/my-app
 ```
 
-Use `--force` to overwrite existing files.
+Use `--force` to overwrite existing files. Works on **Windows, macOS, and Linux**.
 
 ## What `adopt.py` copies
 
@@ -27,8 +27,8 @@ Use `--force` to overwrite existing files.
 
 ## After adopt
 
-```cmd
-cd ..\my-repo
+```bash
+cd ../my-repo
 python scripts/github_issue.py labels --apply
 python scripts/github_issue.py list
 ```

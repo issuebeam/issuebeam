@@ -4,7 +4,7 @@
 
 I file markdown locali (piani, note, post-mortem) restano **riferimento e archivio**. Lo stato operativo (aperto / in corso / chiuso) vive su GitHub.
 
-> Issuebeam funziona con **qualsiasi agente AI** (Cursor, Claude Code, Copilot, …) o **senza agente** (CLI manuale). Documentazione: [issuebeam.github.io/docs/it](https://issuebeam.github.io/docs/it/).
+**Issuebeam** funziona su **Windows, macOS e Linux** con **qualsiasi agente AI** (Cursor, Claude Code, Copilot, …) o **senza agente** (CLI manuale). Documentazione: [issuebeam.github.io/docs/it](https://issuebeam.github.io/docs/it/).
 
 ---
 
@@ -29,18 +29,18 @@ Lo script legge il token **automaticamente** (l'agente non deve chiedere comandi
 | Priorità | Sorgente |
 |----------|----------|
 | 1 | Variabile `GITHUB_TOKEN` nella sessione corrente |
-| 2 | **Variabili utente Windows** (funziona nei terminali IDE) |
+| 2 | **Solo Windows:** variabili utente da registry (aiuta i terminali IDE) |
 | 3 | File `.env` nella root: `GITHUB_TOKEN=github_pat_...` |
 | 4 | File `.secrets/github_token` — una riga, gitignored |
 
-**Setup consigliato:** token in Variabili utente Windows.
+**Setup consigliato:** `GITHUB_TOKEN` come variabile d'ambiente (tutti i SO). Su Windows la CLI può leggere anche il registry se il terminale IDE non eredita la variabile.
 
 **Alternativa file:**
 
-```cmd
-mkdir .secrets 2>nul
-copy tracker\github_token.example .secrets\github_token
-notepad .secrets\github_token
+```bash
+mkdir -p .secrets
+cp tracker/github_token.example .secrets/github_token
+# modifica .secrets/github_token con il token su una riga
 ```
 
 Incolla il token su una riga, salva. **Mai** committare quel file.
@@ -72,7 +72,7 @@ Guida completa: [issuebeam.github.io/docs/it](https://issuebeam.github.io/docs/i
 
 ### Label (prima import o setup repo)
 
-```cmd
+```bash
 python scripts/github_issue.py labels
 python scripts/github_issue.py labels --apply
 ```
@@ -81,8 +81,8 @@ python scripts/github_issue.py labels --apply
 
 Copia l'esempio se serve:
 
-```cmd
-copy tracker\import-manifest.example.json tracker\import-manifest.json
+```bash
+cp tracker/import-manifest.example.json tracker/import-manifest.json
 python scripts/github_issue.py import --dry-run
 python scripts/github_issue.py import --apply
 ```
@@ -91,20 +91,20 @@ Salta duplicati se trova lo stesso **Legacy ID** nel body.
 
 ### Creare issue manualmente
 
-```cmd
+```bash
 python scripts/github_issue.py create "Titolo breve" --body "Descrizione markdown" --labels bug,priority-high,area-frontend
 ```
 
 ### Elencare issue
 
-```cmd
+```bash
 python scripts/github_issue.py list
 python scripts/github_issue.py list --state closed --limit 50
 ```
 
 ### Commento e chiusura
 
-```cmd
+```bash
 python scripts/github_issue.py comment 12 --body "Fix in PR #99"
 python scripts/github_issue.py close 12
 python scripts/github_issue.py close-batch 10 11 12 --reason "Duplicati"

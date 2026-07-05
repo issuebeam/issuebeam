@@ -16,9 +16,9 @@
 
 ## Verify setup
 
-```cmd
+```bash
 python -c "import os; print('token:', 'OK' if os.environ.get('GITHUB_TOKEN') else 'MISSING')"
-type tracker\github_repo
+cat tracker/github_repo
 python scripts/github_issue.py list
 ```
 

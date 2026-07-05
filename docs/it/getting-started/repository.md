@@ -12,8 +12,10 @@ Ordine di risoluzione:
 
 ## Opzione A — file locale (consigliata dopo adopt)
 
-```cmd
-echo myorg/my-app> tracker\github_repo
+Cross-platform (Python 3):
+
+```bash
+python -c "from pathlib import Path; Path('tracker/github_repo').write_text('myorg/my-app\n')"
 ```
 
 ## Opzione B — `.env`
@@ -25,7 +27,7 @@ GITHUB_TOKEN=github_pat_...
 
 ## Opzione C — override una tantum
 
-```cmd
+```bash
 python scripts/github_issue.py --repo myorg/my-app list
 ```
 
@@ -33,7 +35,9 @@ python scripts/github_issue.py --repo myorg/my-app list
 
 Dopo token e slug:
 
-```cmd
+```bash
 python scripts/github_issue.py labels --apply
 python scripts/github_issue.py list
 ```
+
+Uguale su **Windows, macOS e Linux**.

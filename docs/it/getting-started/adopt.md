@@ -2,11 +2,11 @@
 
 Dalla cartella **issuebeam** (o dopo aver clonato questo repo):
 
-```cmd
-python scripts/adopt.py --target ..\my-repo --repo myorg/my-app
+```bash
+python scripts/adopt.py --target ../my-repo --repo myorg/my-app
 ```
 
-Usa `--force` per sovrascrivere file già presenti.
+Usa `--force` per sovrascrivere file esistenti. Funziona su **Windows, macOS e Linux**.
 
 ## Cosa copia `adopt.py`
 
@@ -25,15 +25,15 @@ Usa `--force` per sovrascrivere file già presenti.
 - `tracker/import-manifest.json` dall'esempio (se mancante)
 - `.secrets/.gitkeep`
 
-## Dopo l'adozione
+## Dopo l'adopt
 
-```cmd
-cd ..\my-repo
+```bash
+cd ../my-repo
 python scripts/github_issue.py labels --apply
 python scripts/github_issue.py list
 ```
 
-Apri la cartella nel **tuo agente AI**:
+Apri la cartella nel tuo **agente AI**:
 
 | Piattaforma | File istruzioni |
 |-------------|-----------------|

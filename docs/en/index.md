@@ -1,6 +1,6 @@
 # Issuebeam
 
-**Issuebeam** wires **AI coding agents** to **GitHub Issues** with a stdlib Python CLI and repository instruction files. Works with Cursor, Claude Code, GitHub Copilot, Windsurf, Cline, Gemini CLI, Codex CLI, Aider, and manual use.
+**Issuebeam** wires **AI coding agents** to **GitHub Issues** with a stdlib Python CLI and repository instruction files. Works on **Windows, macOS, and Linux** with Cursor, Claude Code, GitHub Copilot, and more.
 
 !!! info "Bilingual documentation"
     This site is also available in **Italiano**. Use the language selector in the top navigation bar.
@@ -21,8 +21,8 @@ You ship with **vibe coding** (LLMs, fast iteration) and lose track of bugs and 
 
 ## Quick start
 
-```cmd
-echo myorg/my-app> tracker\github_repo
+```bash
+python -c "from pathlib import Path; Path('tracker/github_repo').write_text('myorg/my-app\n')"
 python scripts/github_issue.py labels --apply
 python scripts/github_issue.py create "Setup test" --labels task
 python scripts/github_issue.py list
@@ -32,8 +32,8 @@ Details: [Overview](getting-started/overview.md) · [Token](getting-started/toke
 
 ## Adopt into your repo
 
-```cmd
-python scripts/adopt.py --target ..\my-repo --repo myorg/my-app
+```bash
+python scripts/adopt.py --target ../my-repo --repo myorg/my-app
 ```
 
 Copies CLI, labels, templates, and agent instruction files for multiple platforms.
@@ -55,7 +55,7 @@ pip install -r docs/requirements.txt
 mkdocs serve
 ```
 
-Preview at http://127.0.0.1:8000 — publish with `scripts\publish_docs.bat`, then `git push` in sibling repo `issuebeam.github.io`. **No GitHub Actions.**
+Preview at http://127.0.0.1:8000 — publish with `python scripts/publish_docs.py`, then `git push` in sibling repo `issuebeam.github.io`. **No GitHub Actions.**
 
 ## License
 

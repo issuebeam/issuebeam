@@ -22,7 +22,7 @@ Yes: `python scripts/adopt.py --target ../my-repo --repo myorg/my-app`
 
 ## Where does the token live?
 
-Prefer Windows user env var `GITHUB_TOKEN`. Alternatives: `.env` (gitignored) or `.secrets/github_token`. Never commit tokens or paste them in chat.
+Prefer `GITHUB_TOKEN` as an environment variable (works on Windows, macOS, Linux). Alternatives: `.env` (gitignored) or `.secrets/github_token`. On Windows, the CLI can also read user env vars from the registry if the IDE terminal does not inherit them.
 
 ## Can I use it without any AI agent?
 
@@ -30,10 +30,10 @@ Yes. The CLI is fully usable by humans — many teams start with CLI + labels, t
 
 ## How do I publish these docs?
 
-```cmd
+```bash
 pip install -r docs/requirements.txt
-scripts\publish_docs.bat
-cd ..\issuebeam.github.io
+python scripts/publish_docs.py
+cd ../issuebeam.github.io
 git push
 ```
 
