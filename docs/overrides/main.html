@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block announce %}
+  {% if config.theme.language == "it" %}
+    {% set back_url = "https://issuebeam.github.io/it/" %}
+    {% set back_label = "← Torna al sito web issuebeam.github.io" %}
+  {% else %}
+    {% set back_url = "https://issuebeam.github.io/en/" %}
+    {% set back_label = "← Back to main website (issuebeam.github.io)" %}
+  {% endif %}
+  <a href="{{ back_url }}"><strong>{{ back_label }}</strong></a>
+{% endblock %}

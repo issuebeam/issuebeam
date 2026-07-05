@@ -16,6 +16,7 @@ exclude_docs: |
 theme:
   name: material
   language: en
+  custom_dir: docs/overrides
   palette:
     - scheme: default
       primary: deep purple
