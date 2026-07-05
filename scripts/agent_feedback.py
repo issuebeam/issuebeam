@@ -155,6 +155,7 @@ def post_intake(payload: dict[str, Any]) -> bool:
     headers = {
         "Content-Type": "application/json",
         "X-Issuebeam-Client": "issuebeam-cli",
+        "User-Agent": "issuebeam-cli",
     }
     token = resolve_app_token()
     if not token:

@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # Relative paths inside this skeleton repo → same path in target repo
 COPY_PATHS = [
     "scripts/github_issue.py",
+    "scripts/agent_feedback.py",
     "tracker/labels.yml",
     "tracker/README.md",
     "tracker/import-manifest.example.json",
