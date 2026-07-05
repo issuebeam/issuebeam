@@ -54,6 +54,7 @@ plugins:
           name: Italiano
           build: true
           nav_translations:
+            Main site: Sito web
             Home: Home
             Getting started: Per iniziare
             Platforms: Piattaforme
@@ -92,6 +93,7 @@ markdown_extensions:
       permalink: true
 
 nav:
+  - Main site: https://issuebeam.github.io/
   - Home: index.md
   - Getting started:
       - getting-started/overview.md
