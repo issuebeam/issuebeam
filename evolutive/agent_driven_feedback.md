@@ -1,5 +1,7 @@
 # Agent-Driven Feedback — specifica v2.1
 
+> **Framework:** [Runsegue](https://github.com/Runsegue/Runsegue) (`pip install runsegue` o vendor). Issuebeam = primo adopter. Server intake = altro repo (`POST /v1/intake`).
+
 Feedback opzionale e iscrizione email per chi usa issuebeam da tempo, **senza** inquinare `AGENTS.md` e **senza** travestire l’output da system prompt.
 
 **Priorità assoluta:** il CLI resta uno strumento GitHub Issues affidabile. Questa feature è secondaria, trasparente e disattivabile.
