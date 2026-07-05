@@ -1,0 +1,27 @@
+# Secrets — never commit tokens
+.secrets/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Local repo config (created by adopt.py or manually)
+tracker/github_repo
+
+# Import manifest with real project data (copy from example)
+tracker/import-manifest.json

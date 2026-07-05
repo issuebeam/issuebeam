@@ -1,0 +1,3 @@
+# Optional: fixes SSL certificate verification on Windows
+# (corporate proxy, antivirus, custom trust store)
+truststore>=0.9.0
