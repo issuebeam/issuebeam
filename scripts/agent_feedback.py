@@ -189,7 +189,8 @@ def cmd_feedback(args: argparse.Namespace) -> int:
         print("issuebeam: noted — no prompts for 90 days.")
         return 0
 
-    from github_issue import repo_slug
+    import importlib
+    github_issue = importlib.import_module("github_issue")
 
     email = (args.email or "").strip()
     message = (args.message or "").strip()
@@ -203,7 +204,7 @@ def cmd_feedback(args: argparse.Namespace) -> int:
             "email": email,
             "consent": True,
             "product": "issuebeam",
-            "repo": repo_slug(),
+            "repo": github_issue.repo_slug(),
             "client_version": "issuebeam-cli",
             "source": "agent_driven_feedback",
         }
@@ -213,7 +214,7 @@ def cmd_feedback(args: argparse.Namespace) -> int:
             "kind": kind,
             "message": message[:4000],
             "product": "issuebeam",
-            "repo": repo_slug(),
+            "repo": github_issue.repo_slug(),
             "client_version": "issuebeam-cli",
             "source": "agent_driven_feedback",
         }
