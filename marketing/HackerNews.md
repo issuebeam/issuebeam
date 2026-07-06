@@ -3,6 +3,9 @@
 **URL:** https://news.ycombinator.com/
 **Type:** Developer community. Needs a very technical and humble tone. No marketing fluff.
 
+## Status
+- [ ] Not started — recommended: create account today, let it age a few days before posting "Show HN" to avoid spam filters
+
 ## Submission Guidelines
 *   **Title Format:** Show HN: issuebeam – Let your AI coding agent manage your GitHub Issues
 *   **URL:** Point directly to the GitHub repo `https://github.com/issuebeam/issuebeam` or the docs `https://issuebeam.github.io/docs/`. GitHub repo is usually preferred by HN.

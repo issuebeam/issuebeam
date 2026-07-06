@@ -3,6 +3,10 @@
 **URLs:** https://betalist.com/ | https://startupstash.com/
 **Type:** Directory per nuovi tool (non solo dev tools, ma generalisti per produttività e startup).
 
+## Status
+- [x] **BetaList — Bloccato/Skippato.** Rifiuta esplicitamente domini free hosting ("Vercel, Netlify, Heroku, etc. are not allowed") — `issuebeam.github.io` non passa. Stesso problema visto su SaaSHub.
+- [x] **StartupStash — Skippato.** Niente restrizione sul dominio, ma richiede un'email work/business (rifiuta Gmail/provider personali). Non applicabile senza email a dominio personalizzato.
+
 *Nota: BetaList a volte richiede che il tool sia "in pre-lancio", ma se lo marchi come "Appena rilasciato" spesso lo accettano.*
 
 ## Setup Information per i Form

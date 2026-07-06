@@ -3,6 +3,9 @@
 **URLs:** Console.dev | PyCoder's Weekly | TLDR Web Dev | Python Weekly
 **Type:** Inviare una mail/form ai curatori delle newsletter. Se ti pubblicano, raggiungi dai 50.000 ai 500.000 dev in un solo giorno.
 
+## Status
+- [ ] Non iniziato — nessun account richiesto, solo email/form
+
 ## 1. Console.dev
 Console.dev è specializzata proprio in *developer tools* gratuiti e open source (soprattutto CLI). È il target PERFETTO per issuebeam.
 *   **Azione:** Vai su console.dev e cerca il form "Submit a tool".

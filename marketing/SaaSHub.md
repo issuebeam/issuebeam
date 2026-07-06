@@ -3,6 +3,9 @@
 **URL:** https://www.saashub.com/
 **Type:** Software directory / Alternative finder.
 
+## Status
+- [x] **Skipped, deliberately.** SaaSHub explicitly rejects "products using free subdomains" (e.g. vercel.com, saasify.com) — `issuebeam.github.io` is a GitHub Pages subdomain and fits that pattern. It also targets SaaS/IaaS/PaaS products, not free open-source CLI tools. Low expected value vs. rejection risk — not worth the time.
+
 ## Setup Information
 
 *   **Product Name:** issuebeam

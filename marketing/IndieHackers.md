@@ -3,6 +3,13 @@
 **URL:** https://www.indiehackers.com/
 **Type:** Community for bootstrapped founders and makers.
 
+## Status
+- [x] Already had an existing account (no age/karma issue here)
+- [x] Product Page created for issuebeam (name, tagline, motivation, links, start date July 2026, solo founder, bootstrapped, side project, tags: Open Source/AI/Programming/Productivity)
+- [x] Logo uploaded (square PNG generated from `logo-mark.svg`, 800x800px, anti-aliased)
+- [ ] Original launch post — draft ready (title + body below), not yet confirmed published
+- [ ] First community post attempt (yesterday) failed — reported "not posted", cause unclear (may have been the product-page vs feed-post confusion, now resolved)
+
 ## Post Idea: "I got tired of losing bugs in Cursor chats, so I built a zero-dependency CLI to link AI to GitHub Issues"
 
 **Group:** Developer Tools / Open Source

@@ -3,6 +3,11 @@
 **URLs:** https://dev.to/ | https://hashnode.com/
 **Type:** Blogging platforms for developers. Best for tutorials and "How-I-built-this" articles.
 
+## Status
+- [x] **Dev.to — Published.** Live at https://dev.to/antonio_trento/stop-losing-your-bugs-in-ai-chats-how-to-connect-cursorclaude-to-github-issues-43d7 (title, tags `#python #ai #opensource #productivity`, and body all confirmed matching the template below)
+- [ ] **Hashnode — Blocked.** Sign-in attempt failed ("Something went wrong"); retry with GitHub login (recommended, since a GitHub account already exists) or in an incognito window
+- [ ] When cross-posting to Hashnode: set the **canonical URL** field to the Dev.to link above, to avoid duplicate-content SEO dilution
+
 ## Article Idea: "Stop losing your bugs in AI chats: How to connect Cursor/Claude to GitHub Issues"
 
 **Tags:** `#productivity` `#opensource` `#ai` `#python`

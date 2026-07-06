@@ -3,6 +3,9 @@
 **URLs:** https://x.com/ | https://www.linkedin.com/
 **Type:** Creazione di community e viralità personale (build in public).
 
+## Status
+- [ ] Non iniziato — nessun account X/LinkedIn dedicato al progetto ancora creato
+
 ## X (Twitter) - Il thread di lancio
 *Usa l'hashtag #buildinpublic, #AI, #Cursor, #Python*
 

@@ -3,6 +3,10 @@
 **URLs:** https://www.slant.co/ | https://stackshare.io/
 **Type:** Tech stack and tool comparison platforms.
 
+## Status
+- [x] **StackShare — Pubblicato.** Live come "Issuebeam — GitHub Issues for AI Agents" nella categoria "Code Collaboration". Descrizione e tag inseriti. Pros/Cons lasciati vuoti deliberatamente — richiederebbe creare 10 "stacks" prima di poter contribuire, non ne vale la pena per un dettaglio minore.
+- [ ] **Slant — Deprioritizzato per ora.** UI poco chiara (question-based, non un semplice form) e il sito blocca l'accesso automatico per verificarne i dettagli. Basso traffico/priorità rispetto ad altre directory già fatte. Da riprendere solo se avanza tempo — vedi sezione sotto per i passaggi generali (cerca una domanda pertinente o creane una con "Ask Question", poi "I Recommend" per aggiungere issuebeam come opzione).
+
 ## Setup Information
 
 *   **Tool Name:** issuebeam

@@ -3,6 +3,10 @@
 **URL:** https://alternativeto.net/
 **Type:** Software discovery platform. Great for SEO.
 
+## Status
+- [ ] **Blocked.** New app submissions require an account age of at least 7 days. Can retry after **July 13, 2026, 4:04 PM (Stockholm time)**.
+- [x] All setup info / descriptions below are ready to paste once unblocked
+
 ## Setup Information
 
 *   **Application Name:** issuebeam

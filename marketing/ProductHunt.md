@@ -3,6 +3,13 @@
 **URL:** https://www.producthunt.com/
 **Type:** Launch platform. Best for spikes in traffic and getting early adopters.
 
+## Status
+- [ ] **Account restriction trovata.** Serve aspettare almeno 1 settimana dalla creazione dell'account prima di poter postare (o account potrebbe essere segnalato come "branded" invece che personale — verificare nome completo/foto/bio nel profilo). Newsletter già iscritta, non utile come scorciatoia. In attesa.
+- [x] Thumbnail (1280x720px) — created, saved at `issuebeam.github.io/assets/images/og-images/producthunt-thumbnail.png` (branded: logo mark + wordmark + tagline on dark background)
+- [ ] Screenshots (3-5) — not created yet
+- [ ] Demo video (optional) — not created yet
+- [ ] Launch not yet scheduled
+
 ## Pre-Launch Checklist
 - Create a maker account.
 - Prepare a 1280x720px thumbnail (maybe a GIF showing Cursor/Claude creating an issue).
