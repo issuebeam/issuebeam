@@ -27,5 +27,7 @@
 *   Cross-platform (Windows, Mac, Linux) out of the box.
 *   Comes with pre-written agent instructions (`.cursor/rules/`, `AGENTS.md`).
 *   Open Source (MIT).
+*   No MCP client/server setup required, unlike GitHub's official MCP Server — just a script the agent runs directly.
 **Cons:**
 *   Requires a GitHub repository to function (does not support GitLab/Bitbucket natively yet).
+*   Narrower scope than GitHub's MCP Server (issues only, not the full GitHub API surface).

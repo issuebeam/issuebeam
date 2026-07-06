@@ -27,9 +27,11 @@ Been using Cursor to iterate fast on side projects, and I kept running into the 
 
 So I built a quick Python tool that wires Cursor straight to GitHub Issues. Now when I say "open an issue for the slow API response", it actually creates the issue with labels and everything.
 
-Nothing crazy—it’s literally just a CLI that talks to the GitHub API. Works on Windows, Mac, Linux. No extra dependencies (just uses Python’s standard library).
+Nothing crazy—it's literally just a CLI that talks to the GitHub API. Works on Windows, Mac, Linux. No extra dependencies (just uses Python's standard library).
 
-If you’re tired of losing technical debt in chat history, might be worth checking out:
+(Yeah, I know GitHub has an official MCP server that does something similar. This is for when you don't want to set up an MCP client/server at all—just a script the agent runs directly.)
+
+If you're tired of losing technical debt in chat history, might be worth checking out:
 https://issuebeam.github.io
 
 Happy to answer questions!
@@ -43,6 +45,8 @@ Happy to answer questions!
 Open-sourced a tool I built to solve my own problem: I kept losing bugs in chat history when coding with Claude/Cursor. So I wired them up to GitHub Issues directly.
 
 The Python side is pretty minimal—just `urllib`, `argparse`, and `pathlib`. No pip installs, no `gh` CLI required. Works everywhere because it's all standard library. You drop it in your repo with `python scripts/adopt.py`, give your AI a simple rule file (AGENTS.md), and it just works.
+
+Not trying to compete with GitHub's official MCP server—if you're already set up with MCP, that probably covers more ground. This is more for "I just want a script my agent can run, no server/client setup" use cases.
 
 MIT licensed, Windows/Mac/Linux, PRs welcome.
 

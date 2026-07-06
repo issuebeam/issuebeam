@@ -22,8 +22,8 @@ Now, when you say "open an issue for this bug", the AI runs the CLI and creates 
 *(Includi GIF animata di Cursor che crea l'issue)*
 
 **Tweet 3:**
-Why not just use the `gh` CLI?
-Because I wanted this to work everywhere—Windows, Mac, Linux—without forcing developers to install binaries or deal with OS-specific shell scripts. Standard library Python (`urllib`) runs everywhere your AI runs. (3/5)
+Why not just use the `gh` CLI? Or GitHub's official MCP Server?
+`gh` needs a binary install. MCP needs a client/server setup. I wanted something that works everywhere—Windows, Mac, Linux—with zero setup beyond Python itself, which your AI agent already has access to. (3/5)
 
 **Tweet 4:**
 It's completely Open Source (MIT) and works with Cursor, Claude Code, GitHub Copilot, and Windsurf. 
@@ -51,7 +51,9 @@ It’s a lightweight, cross-platform bridge that allows AI agents to directly li
 
 If you lead an engineering team or use AI to code, this ensures your issue tracker stays in sync with your AI interactions. 
 
-It’s MIT Licensed and free. I'd love to hear your thoughts on how we can better integrate AI agents with our traditional project management workflows!
+It’s MIT Licensed and free. Note: GitHub also offers an official MCP Server with broader capabilities, but it requires MCP client/server infrastructure — issuebeam is the lighter-weight option when you just need issue tracking without that setup overhead.
+
+I’d love to hear your thoughts on how we can better integrate AI agents with our traditional project management workflows!
 
 Link to repo: https://github.com/issuebeam/issuebeam 
 *(Aggiungi screenshot del codice o del terminale)*

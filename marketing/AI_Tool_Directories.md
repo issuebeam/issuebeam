@@ -28,5 +28,7 @@ issuebeam solves this by wiring your AI agent directly to your GitHub repository
 
 Compatible with Windows, Mac, and Linux, and requires zero third-party dependencies.
 
+Note: GitHub also publishes an official MCP Server that covers similar ground with broader scope, but it requires an MCP-compatible client and server setup. issuebeam trades that breadth for simplicity — a single script any agent can run directly, no MCP configuration needed.
+
 ## Perché queste directory sono utili
 Questi siti sono raschiati (scraped) da newsletter e influencer di settore. Entrare qui significa spesso finire automaticamente nei video "Top 5 AI tools of the week" su YouTube o TikTok.

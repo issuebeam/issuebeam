@@ -9,7 +9,7 @@
 ## 1. Console.dev
 Console.dev è specializzata proprio in *developer tools* gratuiti e open source (soprattutto CLI). È il target PERFETTO per issuebeam.
 *   **Azione:** Vai su console.dev e cerca il form "Submit a tool".
-*   **Pitch:** "issuebeam is a zero-dependency Python CLI tool designed specifically to be used by AI coding agents (Cursor, Copilot, Claude). It wires the AI directly to GitHub Issues so developers practicing 'vibe coding' stop losing bug reports and tasks inside their AI chat logs. Works across Windows, Mac, Linux."
+*   **Pitch:** "issuebeam is a zero-dependency Python CLI tool designed specifically to be used by AI coding agents (Cursor, Copilot, Claude). It wires the AI directly to GitHub Issues so developers practicing 'vibe coding' stop losing bug reports and tasks inside their AI chat logs. Works across Windows, Mac, Linux. Unlike GitHub's official MCP Server, there's no MCP client/server to set up — it's just a script the agent runs directly."
 
 ## 2. PyCoder's Weekly & Python Weekly
 Queste newsletter amano progetti open source scritti in Python, specialmente se usano in modo furbo la standard library (come hai fatto tu con `urllib` per evitare dipendenze).
@@ -20,6 +20,7 @@ Queste newsletter amano progetti open source scritti in Python, specialmente se 
     I built an open-source tool called issuebeam (MIT) that might be interesting for your readers. 
     It’s a CLI written entirely in standard-library Python that connects AI coding assistants (Cursor, Claude Code, Copilot) natively to GitHub Issues. 
     I specifically avoided `requests` or OS-specific shells so that any AI agent can execute it seamlessly across Windows, Mac, and Linux to track bugs without breaking the developer's flow.
+    (GitHub does have an official MCP server that does more, but it needs an MCP client/server setup — this is for when you just want a script the agent can run directly.)
     Repo: https://github.com/issuebeam/issuebeam
     Keep up the great work with the newsletter!
 

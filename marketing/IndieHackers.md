@@ -27,6 +27,8 @@ Instead of dealing with OS-specific shell scripts or requiring developers to ins
 
 It includes an `adopt.py` script that instantly copies the setup into any repo, plus the markdown instructions you need to feed your agent (`AGENTS.md` / `.cursor/rules`).
 
+(I know GitHub also has an official MCP server that covers similar ground. issuebeam is deliberately simpler—no MCP client/server setup, just a script the agent runs directly. Different tradeoff, not a replacement.)
+
 Would love to hear if any other makers here are facing similar issues bridging the gap between AI chat and traditional project management tools!
 
 Repo: https://github.com/issuebeam/issuebeam

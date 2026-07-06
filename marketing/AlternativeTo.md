@@ -34,7 +34,10 @@ Instead of asking you to open a browser or copy-paste `gh` CLI commands, the age
 
 Stop losing track of your ideas and bugs in AI chats. Let your AI manage your GitHub Issues for you.
 
+**How it compares to GitHub's official MCP Server:** GitHub's MCP server covers similar ground but requires an MCP-compatible client and server setup. issuebeam trades that breadth for simplicity: it's a single dependency-free Python script any agent can run directly, no MCP configuration needed.
+
 ## Alternatives you are replacing/competing with (for the "Alternative to" section)
 *   GitHub CLI (`gh` issue)
+*   GitHub MCP Server (official, broader scope, requires MCP setup)
 *   Linear (partially, for issue tracking context)
 *   Jira (partially)
