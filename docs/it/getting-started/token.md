@@ -104,10 +104,12 @@ python scripts/github_issue.py list
 
 Lo script legge il token automaticamente:
 
-1. `GITHUB_TOKEN` nell'ambiente del processo corrente
-2. **Solo Windows:** variabile utente da registry (aiuta i terminali IDE)
-3. `.env` nella root del repo
-4. `.secrets/github_token`
+1. `.env` nella root del repo (`GITHUB_TOKEN=...`)
+2. `GITHUB_TOKEN` nell'ambiente del processo corrente
+3. `.secrets/github_token`
+4. **Solo Windows:** variabile utente da registry (fallback se la shell IDE non eredita le variabili)
+
+**Perché `.env` prima:** su Windows gli IDE spesso ereditano un `GITHUB_TOKEN` obsoleto dalle variabili utente. Il token del progetto in `.env` deve avere priorità.
 
 ## Opzionale: `GITHUB_REPO` nell'ambiente
 

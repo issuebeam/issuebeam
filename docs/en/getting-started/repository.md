@@ -6,8 +6,8 @@ Resolution order:
 
 | Priority | Source |
 |----------|--------|
-| 1 | `GITHUB_REPO` environment variable |
-| 2 | `.env` → `GITHUB_REPO=owner/repo` |
+| 1 | `.env` → `GITHUB_REPO=owner/repo` |
+| 2 | `GITHUB_REPO` environment variable |
 | 3 | `tracker/github_repo` — one line (created by `adopt.py`) |
 
 ## Option A — local file (recommended after adopt)

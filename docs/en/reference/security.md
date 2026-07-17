@@ -27,9 +27,9 @@ Installs optional `truststore` (uses the OS trust store on Windows).
 
 The CLI reads the token automatically:
 
-1. `GITHUB_TOKEN` in process environment (all OS)
-2. **Windows only:** user env var from registry (helps IDE terminals)
-3. `.env` at repo root
-4. `.secrets/github_token`
+1. `.env` at repo root (`GITHUB_TOKEN=...`)
+2. `GITHUB_TOKEN` in process environment (all OS)
+3. `.secrets/github_token`
+4. **Windows only:** user env var from registry (fallback)
 
 The agent should run the script directly — not ask the user to paste tokens or commands when configured.

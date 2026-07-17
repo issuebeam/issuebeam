@@ -12,13 +12,13 @@ python scripts/github_issue.py <command>
 
 **Run the script yourself.** Do not ask the user to paste commands manually if the token is configured.
 
-Repository slug: `tracker/github_repo`, `.env` (`GITHUB_REPO`), or environment variable.
+Repository slug: `.env` (`GITHUB_REPO`), `tracker/github_repo`, or environment variable.
 
 Token resolution order:
-1. `GITHUB_TOKEN` in the process environment (all OS)
-2. **Windows only:** user environment variables (registry — helps IDE terminals)
-3. `.env` at repo root
-4. `.secrets/github_token` (gitignored)
+1. `.env` at repo root (`GITHUB_TOKEN=...`)
+2. `GITHUB_TOKEN` in the process environment (session / inherited OS var)
+3. `.secrets/github_token` (gitignored)
+4. **Windows only:** user environment variables (registry — fallback)
 
 Full guides: [issuebeam.github.io/docs](https://issuebeam.github.io/docs/) (EN) · [issuebeam.github.io/docs/it](https://issuebeam.github.io/docs/it/) (IT)
 

@@ -27,9 +27,9 @@ Installa `truststore` opzionale (usa il trust store del SO su Windows).
 
 La CLI legge il token automaticamente:
 
-1. `GITHUB_TOKEN` nell'ambiente del processo (tutti i SO)
-2. **Solo Windows:** variabile utente da registry (aiuta i terminali IDE)
-3. `.env` nella root del repo
-4. `.secrets/github_token`
+1. `.env` nella root del repo (`GITHUB_TOKEN=...`)
+2. `GITHUB_TOKEN` nell'ambiente del processo (tutti i SO)
+3. `.secrets/github_token`
+4. **Solo Windows:** variabile utente da registry (fallback)
 
 L'agente deve eseguire lo script direttamente — non chiedere token o comandi all'utente se configurato.

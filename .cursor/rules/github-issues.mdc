@@ -15,13 +15,13 @@ python scripts/github_issue.py <comando>
 
 > **Piattaforma:** questa regola è per **Cursor**. Per Claude Code, Copilot, Windsurf e altri tool vedi `AGENTS.md`, `CLAUDE.md` e [issuebeam.github.io/docs/platforms/overview/](https://issuebeam.github.io/docs/platforms/overview/).
 
-Repository configurato in `tracker/github_repo`, `.env` (`GITHUB_REPO`) o variabile d'ambiente.
+Repository configurato in `.env` (`GITHUB_REPO`), `tracker/github_repo` o variabile d'ambiente.
 
 Token letto automaticamente da (in ordine):
-1. `GITHUB_TOKEN` nel processo (tutti i SO)
-2. **Solo Windows:** variabili utente da registry (aiuta i terminali IDE)
-3. `.env` nella root del repo
-4. `.secrets/github_token` (gitignored)
+1. `.env` nella root del repo (`GITHUB_TOKEN=...`)
+2. `GITHUB_TOKEN` nel processo (sessione / variabile OS ereditata)
+3. `.secrets/github_token` (gitignored)
+4. **Solo Windows:** variabili utente da registry (fallback)
 
 Guida: [issuebeam.github.io/docs/it](https://issuebeam.github.io/docs/it/) · Piattaforme: [issuebeam.github.io/docs/it/platforms/overview/](https://issuebeam.github.io/docs/it/platforms/overview/) · Sito: [issuebeam.github.io](https://issuebeam.github.io) · CLI: [tracker/README.md](../tracker/README.md).
 

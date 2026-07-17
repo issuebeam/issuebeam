@@ -67,10 +67,10 @@ def _slug_from_file(path: Path) -> str:
 
 
 def repo_slug() -> str:
-    """Repo owner/name: GITHUB_REPO env → .env → tracker/github_repo."""
+    """Repo owner/name: .env → GITHUB_REPO env → tracker/github_repo."""
     sources = (
-        os.environ.get("GITHUB_REPO", "").strip(),
         _value_from_dotenv(ENV_FILE, "GITHUB_REPO"),
+        os.environ.get("GITHUB_REPO", "").strip(),
         _slug_from_file(REPO_FILE),
     )
     for slug in sources:
@@ -85,8 +85,8 @@ def require_repo() -> str:
         print("ERRORE: repository GitHub non configurato.", file=sys.stderr)
         print("", file=sys.stderr)
         print("Una sola configurazione (in ordine di lettura):", file=sys.stderr)
-        print("  1. Variabile GITHUB_REPO (sessione o .env)", file=sys.stderr)
-        print(f"  2. {ENV_FILE.relative_to(ROOT)}  →  GITHUB_REPO=owner/repo", file=sys.stderr)
+        print(f"  1. {ENV_FILE.relative_to(ROOT)}  →  GITHUB_REPO=owner/repo", file=sys.stderr)
+        print("  2. Variabile GITHUB_REPO (sessione)", file=sys.stderr)
         print(f"  3. {REPO_FILE.relative_to(ROOT)}  →  owner/repo su una riga", file=sys.stderr)
         print("", file=sys.stderr)
         print("Oppure: python scripts/github_issue.py --repo owner/repo <comando>", file=sys.stderr)
@@ -115,12 +115,12 @@ def _token_from_file(path: Path) -> str:
 
 
 def resolve_token() -> str:
-    """Token GitHub: env processo → Windows User → .env → .secrets/github_token."""
+    """Token GitHub: .env → env processo → .secrets/github_token → Windows User."""
     sources = (
-        os.environ.get("GITHUB_TOKEN", "").strip(),
-        _token_from_windows_user(),
         _value_from_dotenv(ENV_FILE, "GITHUB_TOKEN"),
+        os.environ.get("GITHUB_TOKEN", "").strip(),
         _token_from_file(TOKEN_FILE),
+        _token_from_windows_user(),
     )
     for token in sources:
         if token:
@@ -134,9 +134,10 @@ def get_token() -> str:
         print("ERRORE: token GitHub non trovato.", file=sys.stderr)
         print("", file=sys.stderr)
         print("Una sola configurazione (in ordine di lettura):", file=sys.stderr)
-        print("  1. Variabile GITHUB_TOKEN (env di sessione o utente — tutti i SO; su Windows anche registry)", file=sys.stderr)
-        print(f"  2. {ENV_FILE.relative_to(ROOT)}  →  GITHUB_TOKEN=...", file=sys.stderr)
+        print(f"  1. {ENV_FILE.relative_to(ROOT)}  →  GITHUB_TOKEN=...", file=sys.stderr)
+        print("  2. Variabile GITHUB_TOKEN (env di sessione)", file=sys.stderr)
         print(f"  3. {TOKEN_FILE.relative_to(ROOT)}  →  token su una riga", file=sys.stderr)
+        print("  4. Windows: variabile utente da registry (fallback)", file=sys.stderr)
         print("", file=sys.stderr)
         print("Il file in .secrets/ è gitignored — sicuro per uso locale.", file=sys.stderr)
         sys.exit(1)

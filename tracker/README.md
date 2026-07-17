@@ -14,8 +14,8 @@ Lo script risolve `owner/repo` in questo ordine:
 
 | Priorità | Sorgente |
 |----------|----------|
-| 1 | Variabile `GITHUB_REPO` nella sessione |
-| 2 | File `.env` → `GITHUB_REPO=owner/repo` |
+| 1 | File `.env` → `GITHUB_REPO=owner/repo` |
+| 2 | Variabile `GITHUB_REPO` nella sessione |
 | 3 | File `tracker/github_repo` — una riga (creato da `adopt.py`) |
 
 Override una tantum: `python scripts/github_issue.py --repo owner/repo list`
@@ -28,12 +28,12 @@ Lo script legge il token **automaticamente** (l'agente non deve chiedere comandi
 
 | Priorità | Sorgente |
 |----------|----------|
-| 1 | Variabile `GITHUB_TOKEN` nella sessione corrente |
-| 2 | **Solo Windows:** variabili utente da registry (aiuta i terminali IDE) |
-| 3 | File `.env` nella root: `GITHUB_TOKEN=github_pat_...` |
-| 4 | File `.secrets/github_token` — una riga, gitignored |
+| 1 | File `.env` nella root: `GITHUB_TOKEN=github_pat_...` |
+| 2 | Variabile `GITHUB_TOKEN` nella sessione corrente |
+| 3 | File `.secrets/github_token` — una riga, gitignored |
+| 4 | **Solo Windows:** variabili utente da registry (fallback) |
 
-**Setup consigliato:** `GITHUB_TOKEN` come variabile d'ambiente (tutti i SO). Su Windows la CLI può leggere anche il registry se il terminale IDE non eredita la variabile.
+**Setup consigliato:** `GITHUB_TOKEN` in `.env` (gitignored) per token specifici del progetto. Su Windows, `.env` ha priorità su variabili utente ereditate dall'IDE.
 
 **Alternativa file:**
 
