@@ -30,6 +30,19 @@ From file:
 python scripts/github_issue.py create "Safari bug" --body-file description.md --labels bug
 ```
 
+## Edit issue
+
+Update title, body, and/or labels on an existing issue. At least one flag is required.  
+`--labels` **replaces** the full label set (empty string clears all labels).
+
+```bash
+python scripts/github_issue.py edit 42 --title "New title"
+python scripts/github_issue.py edit 42 --body "Updated **markdown** body"
+python scripts/github_issue.py edit 42 --body-file updated.md
+python scripts/github_issue.py edit 42 --labels task,priority-low,area-docs
+python scripts/github_issue.py edit 42 --title "Retitled" --labels bug,priority-high
+```
+
 ## Comment
 
 ```bash

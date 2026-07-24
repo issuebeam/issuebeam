@@ -42,6 +42,15 @@ class GithubIssueConfigTests(unittest.TestCase):
                     with patch.dict(os.environ, {"GITHUB_REPO": "process/repo"}, clear=False):
                         self.assertEqual(gh.repo_slug(), "dotenv/repo")
 
+    def test_parse_label_list_none_omitted(self) -> None:
+        self.assertIsNone(gh.parse_label_list(None))
+
+    def test_parse_label_list_splits_and_strips(self) -> None:
+        self.assertEqual(gh.parse_label_list(" task, bug , "), ["task", "bug"])
+
+    def test_parse_label_list_empty_string_clears(self) -> None:
+        self.assertEqual(gh.parse_label_list(""), [])
+
 
 if __name__ == "__main__":
     unittest.main()

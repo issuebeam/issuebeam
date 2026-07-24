@@ -16,7 +16,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_STATE_FILE = ROOT / "tracker" / ".feedback_state.json"
 
-COUNTED_COMMANDS = frozenset({"create", "comment", "close", "close-batch"})
+COUNTED_COMMANDS = frozenset({"create", "edit", "comment", "close", "close-batch"})
 
 INTAKE_API_BASE = os.environ.get(
     "ISSUEBEAM_INTAKE_API_BASE",

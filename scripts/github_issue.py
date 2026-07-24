@@ -269,6 +269,62 @@ def cmd_create(args: argparse.Namespace, token: str) -> None:
     print(f"Creato #{issue['number']}: {issue['html_url']}")
 
 
+def parse_label_list(raw: str | None) -> list[str] | None:
+    """Comma-separated labels → list, or None if flag omitted."""
+    if raw is None:
+        return None
+    return [s.strip() for s in raw.split(",") if s.strip()]
+
+
+def cmd_edit(args: argparse.Namespace, token: str) -> None:
+    """PATCH title / body / labels on an existing issue (labels replaces the full set)."""
+    payload: dict[str, Any] = {}
+    changed: list[str] = []
+
+    if args.title is not None:
+        title = args.title.strip()
+        if not title:
+            print("ERRORE: --title non può essere vuoto.", file=sys.stderr)
+            sys.exit(1)
+        payload["title"] = title
+        changed.append("title")
+
+    body: str | None = None
+    if args.body_file:
+        body = Path(args.body_file).read_text(encoding="utf-8")
+    elif args.body is not None:
+        body = args.body
+    if body is not None:
+        payload["body"] = body
+        changed.append("body")
+
+    labels = parse_label_list(args.labels)
+    if labels is not None:
+        payload["labels"] = labels
+        changed.append("labels")
+
+    if not payload:
+        print(
+            "ERRORE: specifica almeno uno tra --title, --body / --body-file, --labels.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    repo = require_repo()
+    owner, name = repo.split("/", 1)
+    issue = api_request(
+        "PATCH",
+        f"/repos/{owner}/{name}/issues/{args.number}",
+        token=token,
+        data=payload,
+    )
+    label_names = ", ".join(lb["name"] for lb in issue.get("labels", [])) or "(nessuna)"
+    print(f"Aggiornata #{issue['number']}: {issue['html_url']}")
+    print(f"  campi: {', '.join(changed)}")
+    print(f"  title: {issue['title']}")
+    print(f"  labels: {label_names}")
+
+
 def cmd_comment(args: argparse.Namespace, token: str) -> None:
     repo = require_repo()
     owner, name = repo.split("/", 1)
@@ -435,6 +491,24 @@ def build_parser() -> argparse.ArgumentParser:
     p_create.add_argument("--body-file")
     p_create.add_argument("--labels", help="Comma-separated label names")
 
+    p_edit = sub.add_parser(
+        "edit",
+        help="Modifica titolo, corpo e/o label di un'issue esistente",
+    )
+    p_edit.add_argument("number", type=int, help="Numero issue")
+    p_edit.add_argument("--title", default=None, help="Nuovo titolo")
+    p_edit.add_argument(
+        "--body",
+        default=None,
+        help="Nuovo corpo (sostituisce interamente il body)",
+    )
+    p_edit.add_argument("--body-file", help="Leggi il nuovo corpo da file")
+    p_edit.add_argument(
+        "--labels",
+        default=None,
+        help="Sostituisce TUTTE le label (lista comma-separated; stringa vuota = nessuna)",
+    )
+
     p_comment = sub.add_parser("comment", help="Aggiunge un commento a un'issue")
     p_comment.add_argument("number", type=int)
     p_comment.add_argument("--body", default="")
@@ -496,6 +570,8 @@ def main() -> int:
         list_issues(token, state=args.state, limit=args.limit)
     elif args.command == "create":
         cmd_create(args, token)
+    elif args.command == "edit":
+        cmd_edit(args, token)
     elif args.command == "comment":
         cmd_comment(args, token)
     elif args.command == "close":

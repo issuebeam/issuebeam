@@ -30,6 +30,19 @@ Da file:
 python scripts/github_issue.py create "Bug Safari" --body-file descrizione.md --labels bug
 ```
 
+## Modificare issue
+
+Aggiorna titolo, corpo e/o label di un'issue esistente. Serve almeno un flag.  
+`--labels` **sostituisce** l'intero set di label (stringa vuota = nessuna label).
+
+```bash
+python scripts/github_issue.py edit 42 --title "Nuovo titolo"
+python scripts/github_issue.py edit 42 --body "Corpo **markdown** aggiornato"
+python scripts/github_issue.py edit 42 --body-file aggiornato.md
+python scripts/github_issue.py edit 42 --labels task,priority-low,area-docs
+python scripts/github_issue.py edit 42 --title "Rinominata" --labels bug,priority-high
+```
+
 ## Commento
 
 ```bash

@@ -66,6 +66,7 @@ python scripts/github_issue.py labels --apply
 python scripts/github_issue.py import --dry-run
 python scripts/github_issue.py import --apply
 python scripts/github_issue.py create "Titolo" --labels bug,area-frontend --body "..."
+python scripts/github_issue.py edit N --title "..." --body "..." --labels task,priority-low
 python scripts/github_issue.py list
 python scripts/github_issue.py comment N --body "..."
 python scripts/github_issue.py close N
@@ -76,4 +77,4 @@ python scripts/github_issue.py close-batch 1 2 3 --reason "..."
 
 ## Chat con l'agente (italiano)
 
-Se l'utente dice *«apri issue per…»*, *«traccia bug…»*, *«crea task GitHub…»* → usa lo script, non nuovi markdown di tracking.
+Se l'utente dice *«apri issue per…»*, *«traccia bug…»*, *«crea task GitHub…»*, *«modifica issue #N…»* → usa lo script, non nuovi markdown di tracking.

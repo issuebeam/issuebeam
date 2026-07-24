@@ -63,6 +63,7 @@ python scripts/github_issue.py labels --apply
 python scripts/github_issue.py import --dry-run
 python scripts/github_issue.py import --apply
 python scripts/github_issue.py create "Title" --labels bug,area-frontend --body "..."
+python scripts/github_issue.py edit N --title "..." --body "..." --labels task,priority-low
 python scripts/github_issue.py list
 python scripts/github_issue.py comment N --body "..."
 python scripts/github_issue.py close N
@@ -76,5 +77,6 @@ python scripts/github_issue.py close-batch 1 2 3 --reason "..."
 | *«Apri issue per…»* / *"Open an issue for…"* | `create` with appropriate labels |
 | *«Traccia bug…»* / *"Track this bug…"* | check duplicates, then `create` |
 | *«Elenca le issue aperte»* / *"List open issues"* | `list` |
+| *«Modifica issue #N…»* / *"Edit issue #N…"* | `edit N` with `--title` / `--body` / `--labels` |
 | *«Commenta issue #N…»* | `comment N` |
 | *«Chiudi issue #N»* | `close N` |

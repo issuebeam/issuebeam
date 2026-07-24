@@ -95,6 +95,14 @@ Salta duplicati se trova lo stesso **Legacy ID** nel body.
 python scripts/github_issue.py create "Titolo breve" --body "Descrizione markdown" --labels bug,priority-high,area-frontend
 ```
 
+### Modificare issue
+
+```bash
+python scripts/github_issue.py edit 12 --title "Nuovo titolo" --body "Corpo aggiornato" --labels task,priority-low
+```
+
+`--labels` sostituisce l'intero set di label.
+
 ### Elencare issue
 
 ```bash
